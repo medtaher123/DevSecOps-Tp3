@@ -1,0 +1,14 @@
+# Intentionally weak image, used only as the "before" scan baseline.
+# Problems: old fat base, root user, secret baked into the image layers.
+FROM python:3.9
+
+ENV API_KEY=super-secret-lab-key
+ENV APP_HOST=0.0.0.0
+
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY app.py .
+
+EXPOSE 5000
+CMD ["python", "app.py"]

@@ -1,0 +1,23 @@
+services:
+  vulnerable:
+    build:
+      context: .
+      dockerfile: Dockerfile.vulnerable
+    image: notes-api:vulnerable
+    ports:
+      - "5000:5000"
+
+  secure:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: notes-api:secure
+    ports:
+      - "5001:5000"
+    environment:
+      API_KEY: ${API_KEY}
+    user: "10001:10001"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true

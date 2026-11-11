@@ -1,0 +1,48 @@
+
+Sujet de TP 3 : Sécurité des Conteneurs et Monitoring en Runtime
+Durée : 4 heures
+
+Difficulté : 🔴 Avancée
+
+Objectifs d'apprentissage :
+Appliquer les meilleures pratiques pour construire des images Docker sécurisées.
+
+Gérer les secrets d'application de manière sécurisée.
+
+Utiliser un outil de détection d'intrusion au runtime pour surveiller l'application en production.
+
+Matériel nécessaire :
+Votre propre image Docker d'une application.
+
+Accès à un environnement de déploiement (Minikube ou un cluster Kubernetes de démonstration).
+
+Déroulement des activités :
+Sécurité de l'Image Docker (1h 30 min) :
+
+Votre mission : Scannez votre image Docker actuelle avec un outil comme Trivy ou Snyk Container.
+
+À partir du rapport de scan, identifiez les failles de sécurité.
+
+Créez un nouveau Dockerfile sécurisé en suivant les bonnes pratiques (utilisation d'une image de base minimale, utilisateur non-root, etc.). Expliquez les changements que vous avez faits.
+
+Gestion des Secrets (1h 30 min) :
+
+Votre mission : Si votre application utilise des secrets (mots de passe, clés d'API), mettez-les en dehors du code.
+
+Déployez votre application sur Kubernetes en utilisant les Secrets de Kubernetes ou un outil comme Vault.
+
+Démontrez que l'application peut accéder aux secrets en toute sécurité une fois déployée.
+
+Surveillance au Runtime (1h) :
+
+Votre mission : Déployez un agent de sécurité (comme Falco) sur votre cluster Kubernetes.
+
+Simulez un comportement malveillant (par exemple, exécution d'un shell interactif dans un conteneur en production) et montrez que Falco génère une alerte.
+
+Évaluation finale :
+
+Expliquez les améliorations de sécurité que vous avez apportées à votre image Docker.
+
+Démontrez le fonctionnement de votre gestion des secrets.
+
+Montrez la détection d'une menace par votre outil de surveillance.
