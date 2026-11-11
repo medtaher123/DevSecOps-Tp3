@@ -1,4 +1,3 @@
-# Hardened image for TP3.
 # - slim base (fewer packages, smaller CVE surface)
 # - no secrets in ENV or layers
 # - non-root user
@@ -24,3 +23,5 @@ USER appuser
 
 EXPOSE 5000
 CMD ["python", "app.py"]
+
+
